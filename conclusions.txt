@@ -6,14 +6,24 @@ Java Flight Recorder and Java Mission Control to justify your conclusions..
 1) What can you tell about the performance of your hash table implementation compared to Java's tree map? 
 Explain why (or when) your hash table is better or worse than Java's Tree Map.
 
+The performance of my hash table implementation is better and faster than Java's base tree map for the created profile.
+Since TreeMap is based on a tree data structure, the direct, 1-to-1 hashing in my implementation will be better at adding and retreiving data value pairs.
 
 2) What did you observe in java mission control to come to the conclusion above?
 
+For the respective methods that add to each data structure, the hot methods for HashTable took definitively less time than the TreeMap methods.
+Adding to the HashTable took about 11% of the flight time, where as the same operation for the TreeMap took about 57% of the time.
+Retrieving these added variables from the HashTable took less than one percent of the flight test time, where as the TreeMap retrieve took 11.26%. 
 
 3) SCREENSHOT_001.PNG NOTES: Briefly describe what this image 001 shows
 
+Hot method samples and percentage values that I used to come to the conclusion above.
+Proportionally, TreeMap operations here take up much more of the runtime than the equivalent HashTable ones.
 
 4) SCREENSHOT_002.PNG NOTES: Briefly describe what this image 002 shows
 
+Hot packages graph showing where the profile application spent the most time.
+Since most of the java.util package is represented by the TreeMap operations, this explains why the util package is by far the largest in terms of runtime.
+On the other hand, the HashTable operations are in the java default package which spent the least time executing and is a much smaller portion than the util package.
 
 5) Describe other screenshots if you include them in your submission.
